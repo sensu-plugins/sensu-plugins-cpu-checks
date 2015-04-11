@@ -30,10 +30,12 @@
 #   for details.
 #
 
-require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-plugin/metric/cli'
 require 'socket'
 
+#
+# User Percent
+#
 class UserPercent < Sensu::Plugin::Metric::CLI::Graphite
   option :scheme,
          description: 'Metric naming scheme prepended to .username',
@@ -45,7 +47,7 @@ class UserPercent < Sensu::Plugin::Metric::CLI::Graphite
          long: '--ignore_inactive',
          default: true
 
-  def run
+  def run # rubocop:disable all
     timestamp = Time.now.to_i
     pslist = `ps -A -o user= -o %cpu=`
 

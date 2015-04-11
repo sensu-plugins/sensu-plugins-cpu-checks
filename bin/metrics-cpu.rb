@@ -24,10 +24,12 @@
 #   Released under the same terms as Sensu (the MIT license); see LICENSE
 #   for details.
 #
-require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-plugin/metric/cli'
 require 'socket'
 
+#
+# CPU Graphite
+#
 class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
   option :scheme,
          description: 'Metric naming scheme, text to prepend to metric',
@@ -35,7 +37,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
          long: '--scheme SCHEME',
          default: "#{Socket.gethostname}.cpu"
 
-  def run
+  def run # rubocop:disable all
     cpu_metrics = %w(user nice system idle iowait irq softirq steal guest)
     other_metrics = %w(ctxt processes procs_running procs_blocked btime intr)
     cpu_count = 0

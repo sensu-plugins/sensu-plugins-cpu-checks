@@ -28,11 +28,13 @@
 #   for details.
 #
 
-require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-plugin/metric/cli'
 require 'socket'
 require 'linux/kstat'
 
+#
+# CPU Graphite
+#
 class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
   option :scheme,
          description: 'Metric naming scheme, text to prepend to metric',
@@ -57,7 +59,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
 
   def delta_cpu_metrics(baseline_cpus, sample_cpus)
     delta_cpus = {}
-    baseline_cpus.each do | cpu, columns|
+    baseline_cpus.each do |cpu, columns|
       delta_cpus[:"#{cpu}"] = {}
       columns.each do |task, time|
         delta_cpus[:"#{cpu}"][:"#{task}"] = sample_cpus[:"#{cpu}"][:"#{task}"] - time

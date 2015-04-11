@@ -34,7 +34,7 @@ You can also download the key from /certs/ within each repository.
 
 #### Bundler
 
-Add *sensu-plugins-disk-checks* to your Gemfile and run `bundle install` or `bundle update`
+Add *sensu-plugins-cpu-checks* to your Gemfile and run `bundle install` or `bundle update`
 
 #### Chef
 

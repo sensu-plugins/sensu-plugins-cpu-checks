@@ -25,9 +25,11 @@
 #   for details.
 #
 
-require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-plugin/check/cli'
 
+#
+# Check CPU
+#
 class CheckCPU < Sensu::Plugin::Check::CLI
   option :warn,
          short: '-w WARN',
@@ -60,7 +62,7 @@ class CheckCPU < Sensu::Plugin::Check::CLI
     end
   end
 
-  def run
+  def run # rubocop:disable all
     metrics = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest]
 
     cpu_stats_before = acquire_cpu_stats
