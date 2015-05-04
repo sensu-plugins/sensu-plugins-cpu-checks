@@ -11,47 +11,14 @@
 ## Files
  * bin/check-cpu.rb
  * bin/check-cpu.sh
- * bin/metrics-cpu-mpstat
- * bin/metrics-cpu-pcnt-usage
- * bin/metrics-user-pct-usage
+ * bin/metrics-cpu-mpstat.rb
+ * bin/metrics-cpu-pcnt-usage.rb
+ * bin/metrics-user-pct-usage.rb
 
 ## Usage
 
 ## Installation
 
-Add the public key (if you haven’t already) as a trusted certificate
-
-```
-gem cert --add <(curl -Ls https://raw.githubusercontent.com/sensu-plugins/sensu-plugins.github.io/master/certs/sensu-plugins.pem)
-gem install sensu-plugins-cpu-checks -P MediumSecurity
-```
-
-You can also download the key from /certs/ within each repository.
-
-#### Rubygems
-
-`gem install sensu-plugins-cpu-checks`
-
-#### Bundler
-
-Add *sensu-plugins-cpu-checks* to your Gemfile and run `bundle install` or `bundle update`
-
-#### Chef
-
-Using the Sensu **sensu_gem** LWRP
-```
-sensu_gem 'sensu-plugins-cpu-checks' do
-  options('--prerelease')
-  version '0.0.1'
-end
-```
-
-Using the Chef **gem_package** resource
-```
-gem_package 'sensu-plugins-cpu-checks' do
-  options('--prerelease')
-  version '0.0.1'
-end
-```
+[Installation and Setup](https://github.com/sensu-plugins/documentation/blob/master/user_docs/installation_instructions.md)
 
 ## Notes
