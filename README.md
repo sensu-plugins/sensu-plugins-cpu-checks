@@ -5,6 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-cpu-checks/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-cpu-checks)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-cpu-checks/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-cpu-checks)
 [![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-cpu-checks.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-cpu-checks)
+[ ![Codeship Status for sensu-plugins/sensu-plugins-cpu-checks](https://codeship.com/projects/594a6450-d4f8-0132-20c9-0e210ac4c62f/status?branch=master)](https://codeship.com/projects/77924)
 
 ## Functionality
 
