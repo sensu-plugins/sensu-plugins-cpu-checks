@@ -1,6 +1,3 @@
-Change Log
-This project adheres to [Semantic Versioning](http://semver.org/).
-
 #Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
@@ -12,6 +9,3 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ### Added
 - initial release
-
-
-* identical functionality to the community-plugins repo
