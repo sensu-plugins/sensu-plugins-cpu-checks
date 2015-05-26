@@ -15,7 +15,6 @@
 #
 # DEPENDENCIES:
 #   gem: sensu-plugin
-#   gem: socket
 #   gem: linux/kstat
 #
 # USAGE:
