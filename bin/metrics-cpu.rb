@@ -36,7 +36,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
          long: '--scheme SCHEME',
          default: "#{Socket.gethostname}.cpu"
 
-  def run # rubocop:disable all
+  def run
     cpu_metrics = %w(user nice system idle iowait irq softirq steal guest)
     other_metrics = %w(ctxt processes procs_running procs_blocked btime intr)
     cpu_count = 0

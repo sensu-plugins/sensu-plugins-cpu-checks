@@ -62,7 +62,7 @@ class CheckCPU < Sensu::Plugin::Check::CLI
     end
   end
 
-  def run # rubocop:disable all
+  def run
     metrics = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest]
 
     cpu_stats_before = acquire_cpu_stats

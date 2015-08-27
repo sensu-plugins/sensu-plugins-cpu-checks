@@ -57,7 +57,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
     metrics.values.reduce { |sum, metric| sum + metric } # rubocop:disable SingleLineBlockParams
   end
 
-  def run # rubocop:disable all
+  def run
     cpu_sample1 = acquire_proc_stats
     sleep(1)
     cpu_sample2 = acquire_proc_stats
@@ -72,7 +72,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
     cpu_sample_diff = Hash[cpu_sample2.map { |k, v| [k, v - cpu_sample1[k]] }]
 
     cpu_metrics.each do |metric|
-      metric_val = sprintf('%.02f', (cpu_sample_diff[metric] / cpu_total_diff.to_f) * 100) # rubocop:disable all
+      metric_val = sprintf('%.02f', (cpu_sample_diff[metric] / cpu_total_diff.to_f) * 100)
       output "#{config[:scheme]}.#{metric}", metric_val
     end
     ok

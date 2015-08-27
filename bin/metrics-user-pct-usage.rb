@@ -47,7 +47,7 @@ class UserPercent < Sensu::Plugin::Metric::CLI::Graphite
          long: '--ignore_inactive',
          default: true
 
-  def run # rubocop:disable all
+  def run
     timestamp = Time.now.to_i
     pslist = `ps -A -o user= -o %cpu=`
 
