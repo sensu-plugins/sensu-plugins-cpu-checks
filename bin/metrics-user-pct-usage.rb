@@ -66,12 +66,12 @@ class UserPercent < Sensu::Plugin::Metric::CLI::Graphite
     end
 
     if config[:ignore_inactive]
-       users.delete_if { |_key, value| value['cpu'] == 0 }
-     end
+      users.delete_if { |_key, value| value['cpu'] == 0 }
+    end
 
     users.each do |user, h|
       h.each do |key, value|
-	output [config[:scheme], user].join(".#{key}."), value, timestamp
+        output [config[:scheme], user].join(".#{key}."), value, timestamp
       end
     end
     ok
