@@ -15,7 +15,7 @@
 # for details.
 
 # get arguments
-while getopts 'w:c:h' OPT; do
+while getopts ':w:c:h' OPT; do
   case $OPT in
     w)  WARN=$OPTARG;;
     c)  CRIT=$OPTARG;;
