@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## Unreleased
+### Changed
+- modify check-cpu.rb to change state if >= threshold 
 
 ## [0.0.4] - 2015-09-29
 ### Changed
