@@ -100,8 +100,8 @@ class CheckCPU < Sensu::Plugin::Check::CLI
 
     message msg
 
-    critical if checked_usage > config[:crit]
-    warning if checked_usage > config[:warn]
+    critical if checked_usage >= config[:crit]
+    warning if checked_usage >= config[:warn]
     ok
   end
 end
