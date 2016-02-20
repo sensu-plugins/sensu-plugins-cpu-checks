@@ -78,7 +78,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
       # assumes architecture's jiffie is 1/100th of a second
       columns.each_pair do |task, time|
         # #YELLOW
-        time = time / cpu_count if "#{cpu}" == 'cpu' # rubocop:disable Style/SelfAssignment
+        time = time / cpu_count if cpu.to_s == 'cpu' # rubocop:disable Style/SelfAssignment
         output "#{config[:scheme]}.#{cpu}.#{task}", time
       end
     end

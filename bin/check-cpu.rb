@@ -31,7 +31,7 @@ require 'sensu-plugin/check/cli'
 # Check CPU
 #
 class CheckCPU < Sensu::Plugin::Check::CLI
-  CPU_METRICS = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest, :guest_nice]
+  CPU_METRICS = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest, :guest_nice].freeze
 
   option :warn,
          short: '-w WARN',
@@ -66,7 +66,7 @@ class CheckCPU < Sensu::Plugin::Check::CLI
     File.open('/proc/stat', 'r').each_line do |line|
       info = line.split(/\s+/)
       name = info.shift
-      return info.map(&:to_f) if name.match(/^cpu$/)
+      return info.map(&:to_f) if name =~ /^cpu$/
     end
   end
 
