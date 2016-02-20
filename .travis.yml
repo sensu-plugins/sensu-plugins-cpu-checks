@@ -1,19 +1,33 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+- gem build sensu-plugins-cpu-checks.gemspec
+- gem install sensu-plugins-cpu-checks-*.gem
+deploy:
+  provider: rubygems
+  api_key:
+    secure: AyvwPx6XOE0hfd09ji2oRonTECC+zh0sVZByRHtCfulKBNKPM5rph96eR6q0QFz9/dqJev7veAThmxGrEaODE4muMk5CdM5VfaR1i8Fc4e7YmuhnMAZxzi9RsBSE/FpPlXVhJ0kd8AP910SVmBixnDyxlC46zatdKToZELv/YF8=
+  gem: sensu-plugins-cpu-checks
+  on:
+    tags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-cpu-checks
