@@ -7,6 +7,9 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Changed
 - modify check-cpu.rb to change state if >= threshold 
 
+### Added
+- add metrics-numastat.rb
+
 ## [0.0.4] - 2015-09-29
 ### Changed
 - Fix getopts syntax in check-cpu.sh
