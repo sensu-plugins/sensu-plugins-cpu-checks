@@ -13,6 +13,7 @@
  * bin/check-cpu.sh
  * bin/metrics-cpu-mpstat.rb
  * bin/metrics-cpu-pcnt-usage.rb
+ * bin/metrics-numastat.rb
  * bin/metrics-user-pct-usage.rb
 
 ## Usage
