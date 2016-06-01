@@ -24,6 +24,8 @@ while getopts ':w:c:h' OPT; do
   esac
 done
 
+PROC_PATH=${PROC_PATH:-'/proc'}
+
 # usage
 HELP="
     usage: $0 [ -w value -c value -p -h ]
@@ -44,7 +46,7 @@ if [ ${#cpuusage1} -eq 0 ]; then
   exit 2
 fi
 sleep 1
-cpuusage2=(`cat /proc/stat | head -1`)
+cpuusage2=(`cat $PROC_PATH/stat | head -1`)
 if [ ${#cpuusage2} -eq 0 ]; then
   echo "CRITICAL - CPU UNKNOWN"
   exit 2
