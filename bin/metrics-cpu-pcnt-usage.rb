@@ -36,9 +36,14 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
          long: '--scheme SCHEME',
          default: "#{Socket.gethostname}.cpu"
 
+  option :proc_path,
+         long: '--proc-path /proc',
+         proc: proc(&:to_f),
+         default: '/proc'
+
   def acquire_proc_stats
     cpu_metrics = %w(user nice system idle iowait irq softirq steal guest)
-    File.open('/proc/stat', 'r').each_line do |line|
+    File.open("#{config[:proc_path]}/stat", 'r').each_line do |line|
       info = line.split(/\s+/)
       next if info.empty?
       name = info.shift

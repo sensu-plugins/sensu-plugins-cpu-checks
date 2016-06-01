@@ -48,6 +48,11 @@ class CheckCPU < Sensu::Plugin::Check::CLI
          proc: proc(&:to_f),
          default: 1
 
+  option :proc_path,
+         long: '--proc-path /proc',
+         proc: proc(&:to_f),
+         default: '/proc'
+
   option :idle_metrics,
          long: '--idle-metrics METRICS',
          description: 'Treat the specified metrics as idle. Defaults to idle,iowait,steal,guest,guest_nice',
@@ -63,7 +68,7 @@ class CheckCPU < Sensu::Plugin::Check::CLI
   end
 
   def acquire_cpu_stats
-    File.open('/proc/stat', 'r').each_line do |line|
+    File.open("#{config[:proc_path]}/stat", 'r').each_line do |line|
       info = line.split(/\s+/)
       name = info.shift
       return info.map(&:to_f) if name =~ /^cpu$/
