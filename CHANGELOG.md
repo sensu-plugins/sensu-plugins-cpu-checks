@@ -10,6 +10,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Added
 - add metrics-numastat.rb
 
+## [0.0.5] - 2016-06-01
+### Changed
+- Specify the /proc location for use within a container
+
 ## [0.0.4] - 2015-09-29
 ### Changed
 - Fix getopts syntax in check-cpu.sh
