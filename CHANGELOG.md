@@ -5,17 +5,17 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 ### Changed
-- modify check-cpu.rb to change state if >= threshold
+- Modified check-cpu.rb to change state if >= threshold
+- Updated Rubocop to 0.40, applied auto-correct
+- Loosened sensu-plugin dependency to ~> 1.2
+- Specify the /proc location for use within a container
 
 ### Added
-- add metrics-numastat.rb
+- Added metrics-numastat.rb
+- check-cpu.rb: Added --idle-metrics flag for indicating counters which should be considered idle
 
 ### Removed
 - Remove Ruby 1.9.3 support; add Ruby 2.3.0 support in test matrix
-
-## [0.0.5] - 2016-06-01
-### Changed
-- Specify the /proc location for use within a container
 
 ## [0.0.4] - 2015-09-29
 ### Changed
