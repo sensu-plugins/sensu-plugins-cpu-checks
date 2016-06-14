@@ -5,10 +5,13 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 ### Changed
-- modify check-cpu.rb to change state if >= threshold 
+- modify check-cpu.rb to change state if >= threshold
 
 ### Added
 - add metrics-numastat.rb
+
+### Removed
+- Remove Ruby 1.9.3 support; add Ruby 2.3.0 support in test matrix
 
 ## [0.0.5] - 2016-06-01
 ### Changed
