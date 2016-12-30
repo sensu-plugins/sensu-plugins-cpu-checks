@@ -26,11 +26,12 @@
 #
 
 require 'sensu-plugin/check/cli'
+require 'json'
 
 #
 # Check CPU
 #
-class CheckCPU < Sensu::Plugin::Check::CLI
+class CheckCPUNew < Sensu::Plugin::Check::CLI
   CPU_METRICS = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest, :guest_nice].freeze
 
   option :warn,
@@ -47,6 +48,10 @@ class CheckCPU < Sensu::Plugin::Check::CLI
          long: '--sleep SLEEP',
          proc: proc(&:to_f),
          default: 1
+
+  option :cache_file,
+         long: '--cache-file CACHEFILE',
+         default: nil
 
   option :proc_path,
          long: '--proc-path /proc',
@@ -75,18 +80,48 @@ class CheckCPU < Sensu::Plugin::Check::CLI
     end
   end
 
+  def acquire_stats_with_sleeping(sec)
+    before = acquire_cpu_stats
+    sleep sec
+    after = acquire_cpu_stats
+
+    [before, after]
+  end
+
+  def acquire_stats_with_cache_file
+    before = JSON.parse(File.read(config[:cache_file]))
+    now = acquire_cpu_stats
+
+    [before, now, Time.now.to_i - File.mtime(config[:cache_file]).to_i]
+  end
+
+  def write_stats_to_cache_file(data)
+    File.write(config[:cache_file], data)
+  end
+
+  def acquire_stats(sec)
+    if config[:cache_file] && File.exist?(config[:cache_file])
+      (before, now, sec) = acquire_stats_with_cache_file
+    else
+      (before, now) = acquire_stats_with_sleeping(sec)
+    end
+    if (config[:cache_file])
+      write_stats_to_cache_file(now)
+    end
+
+    return [before, now, sec]
+  end
+
   def run
-    cpu_stats_before = acquire_cpu_stats
-    sleep config[:sleep]
-    cpu_stats_after = acquire_cpu_stats
+    (cpu_stats_before, cpu_stats_now, sec) = acquire_stats(config[:sleep])
 
     # Some kernels don't have 'guest' and 'guest_nice' values
-    metrics = CPU_METRICS.slice(0, cpu_stats_after.length)
+    metrics = CPU_METRICS.slice(0, cpu_stats_now.length)
 
     cpu_total_diff = 0.to_f
     cpu_stats_diff = []
     metrics.each_index do |i|
-      cpu_stats_diff[i] = cpu_stats_after[i] - cpu_stats_before[i]
+      cpu_stats_diff[i] = cpu_stats_now[i] - cpu_stats_before[i]
       cpu_total_diff += cpu_stats_diff[i]
     end
 
