@@ -31,7 +31,7 @@ require 'json'
 #
 # Check CPU
 #
-class CheckCPUNew < Sensu::Plugin::Check::CLI
+class CheckCPU < Sensu::Plugin::Check::CLI
   CPU_METRICS = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest, :guest_nice].freeze
 
   option :warn,
