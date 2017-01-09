@@ -92,7 +92,7 @@ class CheckCPU < Sensu::Plugin::Check::CLI
     before = JSON.parse(File.read(config[:cache_file]))
     now = acquire_cpu_stats
 
-    [before, now, Time.now.to_i - File.mtime(config[:cache_file]).to_i]
+    [before, now]
   end
 
   def write_stats_to_cache_file(data)
@@ -101,19 +101,18 @@ class CheckCPU < Sensu::Plugin::Check::CLI
 
   def acquire_stats(sec)
     if config[:cache_file] && File.exist?(config[:cache_file])
-      (before, now, sec) = acquire_stats_with_cache_file
+      (before, now) = acquire_stats_with_cache_file
     else
       (before, now) = acquire_stats_with_sleeping(sec)
     end
-    if (config[:cache_file])
-      write_stats_to_cache_file(now)
-    end
 
-    return [before, now, sec]
+    write_stats_to_cache_file(now) if config[:cache_file]
+
+    [before, now]
   end
 
   def run
-    (cpu_stats_before, cpu_stats_now, sec) = acquire_stats(config[:sleep])
+    (cpu_stats_before, cpu_stats_now) = acquire_stats(config[:sleep])
 
     # Some kernels don't have 'guest' and 'guest_nice' values
     metrics = CPU_METRICS.slice(0, cpu_stats_now.length)
