@@ -34,6 +34,13 @@ require 'json'
 class CheckCPU < Sensu::Plugin::Check::CLI
   CPU_METRICS = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest, :guest_nice].freeze
 
+  option :less_than,
+         description: 'Change whether value is less than check',
+         short: '-l',
+         long: '--less_than',
+         default: false,
+         boolean: true
+
   option :warn,
          short: '-w WARN',
          proc: proc(&:to_f),
@@ -147,8 +154,13 @@ class CheckCPU < Sensu::Plugin::Check::CLI
 
     message msg
 
-    critical if checked_usage >= config[:crit]
-    warning if checked_usage >= config[:warn]
+    if config[:less_than]
+      critical if checked_usage <= config[:crit]
+      warning if checked_usage <= config[:warn]
+    else
+      critical if checked_usage >= config[:crit]
+      warning if checked_usage >= config[:warn]
+    end
     ok
   end
 end
