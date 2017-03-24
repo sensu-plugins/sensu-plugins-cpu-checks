@@ -42,7 +42,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
          default: '/proc'
 
   def run
-    cpu_metrics = %w(user nice system idle iowait irq softirq steal guest)
+    cpu_metrics = %w(user nice system idle iowait irq softirq steal guest guest_nice)
     other_metrics = %w(ctxt processes procs_running procs_blocked btime intr)
     cpu_count = 0
 
