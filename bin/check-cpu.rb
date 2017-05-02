@@ -62,7 +62,7 @@ class CheckCPU < Sensu::Plugin::Check::CLI
 
   option :proc_path,
          long: '--proc-path /proc',
-         proc: proc(&:to_f),
+         proc: proc(&:to_s),
          default: '/proc'
 
   option :idle_metrics,
