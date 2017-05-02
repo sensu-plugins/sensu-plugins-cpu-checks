@@ -5,6 +5,9 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+### Fixed
+- Set the correct type for --proc-path
+
 ## [1.0.0] - 2016-06-15
 ### Changed
 - Modified check-cpu.rb to change state if >= threshold
