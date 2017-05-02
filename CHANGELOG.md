@@ -5,7 +5,6 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
-## 2017-05-02
 ### Fixed
 - Set the correct type for --proc-path
 
