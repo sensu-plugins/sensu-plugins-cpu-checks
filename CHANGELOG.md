@@ -5,8 +5,14 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+## [1.1.0] - 2017-05-02
+### Added
+- check-cpu.rb: added option to check less than (@santhosh-tekuri)
+- check-cpu.rb: added option to use a cache file rather than sleeping to look at previous times (@axos88)
+
 ### Fixed
-- Set the correct type for --proc-path
+- Set the correct type for --proc-path (@envintus)
+- metrics-cpu.rb was missing a column (@michau)
 
 ## [1.0.0] - 2016-06-15
 ### Changed
@@ -43,7 +49,8 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 - initial release
 
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/0.0.4...1.0.0
 [0.0.4]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/0.0.3...0.0.4
 [0.0.3]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/0.0.2...0.0.3
