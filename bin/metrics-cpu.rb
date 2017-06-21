@@ -38,7 +38,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
 
   option :proc_path,
          long: '--proc-path /proc',
-         proc: proc(&:to_f),
+         proc: proc(&:to_s),
          default: '/proc'
 
   def run
