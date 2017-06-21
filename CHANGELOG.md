@@ -4,10 +4,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+
+## [1.1.2] - 2017-06-20
 ### Fixed
 - `metrics-cpu.rb`/`metrics-cpu-pcnt-usage.rb`: Set the correct type for --proc-path (@bimlendu)
 
-## [1.1.0] - 2017-05-02
+## [1.1.1] - 2017-05-02
 ### Changed
 - no real change just bumping due to deployment issue.
 
@@ -55,8 +57,9 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 - initial release
 
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.1...HEAD
-[1.1.1]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.0...1.1.0
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.2...HEAD
+[1.1.2]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.1...1.1.2
+[1.1.1]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/0.0.4...1.0.0
 [0.0.4]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/0.0.3...0.0.4
