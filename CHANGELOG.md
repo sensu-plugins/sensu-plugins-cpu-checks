@@ -4,6 +4,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+### Added
+- ruby 2.4 testing (@majormoses)
+
+### Fixed
+- PR template spell "Compatibility" correctly (@majormoses)
+- made bin executable (@majormoses)
 
 ## [1.1.2] - 2017-06-20
 ### Fixed
