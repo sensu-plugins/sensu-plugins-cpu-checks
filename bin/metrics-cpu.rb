@@ -58,7 +58,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
         info.size.times { |i| output "#{config[:scheme]}.#{name}.#{cpu_metrics[i]}", info[i] }
       end
 
-      output "#{config[:scheme]}.#{name}", info.last if other_metrics.include? name
+      output "#{config[:scheme]}.#{name}", info.first if other_metrics.include? name
     end
     if cpu_count > 0
       # writes the number of cpus, the minus 1 is because /proc/stat/
