@@ -1,9 +1,11 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
+This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins/community/blob/master/HOW_WE_CHANGELOG.md)
 
 ## [Unreleased]
+
+## [1.1.3] - 2018-01-25
 ### Added
 - ruby 2.4 testing (@majormoses)
 
@@ -11,6 +13,9 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 - PR template spell "Compatibility" correctly (@majormoses)
 - made bin executable (@majormoses)
 - metrics-cpu.rb: fixed interrupt counters by taking the first column which is an aggregate of all interrupt stats  (@yuri-zubov)
+
+### Changed
+- updated Changelog guidelines location (@majormoses)
 
 ## [1.1.2] - 2017-06-20
 ### Fixed
@@ -64,7 +69,8 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 - initial release
 
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.2...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.3...HEAD
+[1.1.3]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.0.0...1.1.0
