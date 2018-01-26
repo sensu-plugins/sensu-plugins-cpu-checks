@@ -10,6 +10,7 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Fixed
 - PR template spell "Compatibility" correctly (@majormoses)
 - made bin executable (@majormoses)
+- metrics-cpu.rb: fixed interrupt counters by taking the first column which is an aggregate of all interrupt stats  (@yuri-zubov)
 
 ## [1.1.2] - 2017-06-20
 ### Fixed
