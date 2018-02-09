@@ -1,5 +1,4 @@
 #! /usr/bin/env ruby
-#  encoding: UTF-8
 #
 #   cpu-pct-usage-metrics
 #
@@ -42,7 +41,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
          default: '/proc'
 
   def acquire_proc_stats
-    cpu_metrics = %w(user nice system idle iowait irq softirq steal guest)
+    cpu_metrics = %w[user nice system idle iowait irq softirq steal guest]
     File.open("#{config[:proc_path]}/stat", 'r').each_line do |line|
       info = line.split(/\s+/)
       next if info.empty?
@@ -59,7 +58,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
 
   def sum_cpu_metrics(metrics)
     # #YELLOW
-    metrics.values.reduce { |sum, metric| sum + metric } # rubocop:disable SingleLineBlockParams
+    metrics.values.reduce { |sum, metric| sum + metric }
   end
 
   def run

@@ -1,5 +1,5 @@
 #! /usr/bin/env ruby
-#  encoding: UTF-8
+
 #
 #   cpu-metrics
 #
@@ -42,8 +42,8 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
          default: '/proc'
 
   def run
-    cpu_metrics = %w(user nice system idle iowait irq softirq steal guest guest_nice)
-    other_metrics = %w(ctxt processes procs_running procs_blocked btime intr)
+    cpu_metrics = %w[user nice system idle iowait irq softirq steal guest guest_nice]
+    other_metrics = %w[ctxt processes procs_running procs_blocked btime intr]
     cpu_count = 0
 
     File.open("#{config[:proc_path]}/stat", 'r').each_line do |line|
