@@ -32,7 +32,7 @@ require 'json'
 # Check CPU
 #
 class CheckCPU < Sensu::Plugin::Check::CLI
-  CPU_METRICS = [:user, :nice, :system, :idle, :iowait, :irq, :softirq, :steal, :guest, :guest_nice].freeze
+  CPU_METRICS = %i[user nice system idle iowait irq softirq steal guest guest_nice].freeze
 
   option :less_than,
          description: 'Change whether value is less than check',
@@ -69,7 +69,7 @@ class CheckCPU < Sensu::Plugin::Check::CLI
          long: '--idle-metrics METRICS',
          description: 'Treat the specified metrics as idle. Defaults to idle,iowait,steal,guest,guest_nice',
          proc: proc { |x| x.split(/,/).map { |y| y.strip.to_sym } },
-         default: [:idle, :iowait, :steal, :guest, :guest_nice]
+         default: %i[idle iowait steal guest guest_nice]
 
   CPU_METRICS.each do |metric|
     option metric,
