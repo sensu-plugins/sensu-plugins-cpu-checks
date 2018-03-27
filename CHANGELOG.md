@@ -5,6 +5,7 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+## [2.0.1] - 2018-03-27
 ### Security
 - updated yard dependency to `~> 0.9.11` per: https://nvd.nist.gov/vuln/detail/CVE-2017-17042 (@majormoses)
 
@@ -82,7 +83,8 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 - initial release
 
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/2.0.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/2.0.1...HEAD
+[2.0.1]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.3...2.0.0
 [1.1.3]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/sensu-plugins/sensu-plugins-cpu-checks/compare/1.1.1...1.1.2
