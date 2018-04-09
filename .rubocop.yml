@@ -31,3 +31,6 @@ Style/Documentation:
 
 Style/FormatString:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
