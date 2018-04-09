@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins/community/blob/master/HOW_WE_CHANGELOG.md)
 
 ## [Unreleased]
+### Added
+- Added metrics-cpu-interrupts.rb (@yuri-zubov sponsored by Actility, https://www.actility.com)
+- Added metrics-cpu-softirqs.rb (@yuri-zubov sponsored by Actility, https://www.actility.com)
+- Added metrics-softnet-stat.rb (@yuri-zubov sponsored by Actility, https://www.actility.com)
 
 ## [2.0.1] - 2018-03-27
 ### Security
