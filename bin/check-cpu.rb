@@ -53,8 +53,9 @@ class CheckCPU < Sensu::Plugin::Check::CLI
 
   option :sleep,
          long: '--sleep SLEEP',
+         description: 'This sleep controls the interval between the initial poll for cpu utilization and the next data point, the longer the interval is the more accurate your data will be', # rubocop:disable Metrics/LineLength
          proc: proc(&:to_f),
-         default: 1
+         default: 5
 
   option :cache_file,
          long: '--cache-file CACHEFILE',

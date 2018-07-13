@@ -5,6 +5,9 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+### Breaking Changes
+- changing the default of `--sleep` from `1` to `5` this argument controls the time between initial poll and the followup poll which will get more overall accurate measurement of cpu utilization especially on systems that have less resources available (@majormoses)
+
 ## [2.1.0] - 2018-04-2018
 ### Added
 - Added metrics-cpu-interrupts.rb (@yuri-zubov sponsored by Actility, https://www.actility.com)
