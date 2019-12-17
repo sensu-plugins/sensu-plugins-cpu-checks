@@ -33,7 +33,7 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
 
   s.add_runtime_dependency 'sensu-plugin', '~> 4.0'
 
-  s.add_runtime_dependency 'linux-kstat',  '0.1.3'
+  s.add_runtime_dependency 'linux-kstat',  '0.2.3'
 
   s.add_development_dependency 'bundler',                   '~> 2.1'
   s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
