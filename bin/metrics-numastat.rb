@@ -37,17 +37,19 @@ class NumastatMetrics < Sensu::Plugin::Metric::CLI::Graphite
   def run
     begin
       output = `/usr/bin/numastat`
-    rescue Errno::ENOENT => err
-      unknown err
+    rescue Errno::ENOENT => e
+      unknown e
     end
 
     nodes = []
     output.each_line do |line|
       nodes = line.split(' ') if nodes.empty?
       next unless /^([^\s]+)\s+(.+)$/ =~ line
+
       key = Regexp.last_match[1]
       vals = Regexp.last_match[2]
       next if key.nil? || vals.nil?
+
       nodes.zip(vals.split(' ')).each do |node, val|
         output "#{config[:scheme]}.#{node}.#{key}", val
       end
