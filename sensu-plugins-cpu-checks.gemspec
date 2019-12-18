@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'date'
 require_relative 'lib/sensu-plugins-cpu-checks'
 
-Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
+Gem::Specification.new do |s|
   s.authors                = ['Sensu Plugins and contributors']
   # s.cert_chain             = ['certs/sensu-plugins.pem']
   s.date                   = Date.today.to_s
@@ -16,10 +16,10 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.files                  = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md CHANGELOG.md]
   s.homepage               = 'https://github.com/sensu-plugins/sensu-plugins-cpu-checks'
   s.license                = 'MIT'
-  s.metadata               = { 'maintainer'         => '@mattyjones',
+  s.metadata               = { 'maintainer' => '@mattyjones',
                                'development_status' => 'active',
-                               'production_status'  => 'unstable - testing recommended',
-                               'release_draft'      => 'false',
+                               'production_status' => 'unstable - testing recommended',
+                               'release_draft' => 'false',
                                'release_prerelease' => 'false' }
   s.name                   = 'sensu-plugins-cpu-checks'
   s.platform               = Gem::Platform::RUBY
