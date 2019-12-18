@@ -9,6 +9,8 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 - Updated bundler development depedency to '~> 2.1'
 - Updated rubocop development dependency to '~> 0.77.0'
 - Updated rake development dependancy to '~> 13.0'
+- Updated codeclimate-test-reporter development dependancy to '~> 1.0'
+
 ### Added
 - Updated asset build targets to support centos6
 
