@@ -45,6 +45,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
     File.open("#{config[:proc_path]}/stat", 'r').each_line do |line|
       info = line.split(/\s+/)
       next if info.empty?
+
       name = info.shift
 
       # we are matching TOTAL stats and returning a hash of values
@@ -71,12 +72,12 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
     cpu_total1 = sum_cpu_metrics(cpu_sample1)
     cpu_total2 = sum_cpu_metrics(cpu_sample2)
     # total cpu usage in last second in CPU jiffs (1/100 s)
-    cpu_total_diff  = cpu_total2 - cpu_total1
+    cpu_total_diff = cpu_total2 - cpu_total1
     # per CPU metric diff
     cpu_sample_diff = Hash[cpu_sample2.map { |k, v| [k, v - cpu_sample1[k]] }]
 
     cpu_metrics.each do |metric|
-      metric_val = sprintf('%.02f', (cpu_sample_diff[metric] / cpu_total_diff.to_f) * 100)
+      metric_val = sprintf('%<value>.02f', value: (cpu_sample_diff[metric] / cpu_total_diff.to_f) * 100)
       output "#{config[:scheme]}.#{metric}", metric_val
     end
     ok

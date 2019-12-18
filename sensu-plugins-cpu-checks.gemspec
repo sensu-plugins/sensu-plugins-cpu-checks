@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'date'
 require_relative 'lib/sensu-plugins-cpu-checks'
 
-Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
+Gem::Specification.new do |s|
   s.authors                = ['Sensu Plugins and contributors']
   # s.cert_chain             = ['certs/sensu-plugins.pem']
   s.date                   = Date.today.to_s
@@ -16,10 +16,10 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.files                  = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md CHANGELOG.md]
   s.homepage               = 'https://github.com/sensu-plugins/sensu-plugins-cpu-checks'
   s.license                = 'MIT'
-  s.metadata               = { 'maintainer'         => '@mattyjones',
+  s.metadata               = { 'maintainer' => '@mattyjones',
                                'development_status' => 'active',
-                               'production_status'  => 'unstable - testing recommended',
-                               'release_draft'      => 'false',
+                               'production_status' => 'unstable - testing recommended',
+                               'release_draft' => 'false',
                                'release_prerelease' => 'false' }
   s.name                   = 'sensu-plugins-cpu-checks'
   s.platform               = Gem::Platform::RUBY
@@ -33,7 +33,7 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
 
   s.add_runtime_dependency 'sensu-plugin', '~> 4.0'
 
-  s.add_runtime_dependency 'linux-kstat',  '0.1.3'
+  s.add_runtime_dependency 'linux-kstat',  '0.2.3'
 
   s.add_development_dependency 'bundler',                   '~> 2.1'
   s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
@@ -42,6 +42,6 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.add_development_dependency 'rake',                      '~> 13.0'
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
   s.add_development_dependency 'rspec',                     '~> 3.4'
-  s.add_development_dependency 'rubocop',                   '~> 0.51.0'
+  s.add_development_dependency 'rubocop',                   '~> 0.77.0'
   s.add_development_dependency 'yard',                      '~> 0.9.11'
 end

@@ -48,6 +48,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
     File.open("#{config[:proc_path]}/stat", 'r').each_line do |line|
       info = line.split(/\s+/)
       next if info.empty?
+
       name = info.shift
 
       if name =~ /cpu([0-9]+|)/
