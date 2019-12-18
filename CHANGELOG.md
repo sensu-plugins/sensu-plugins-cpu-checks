@@ -7,7 +7,8 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 ### Changed
 - Updated linux-kstat runtime dependancy to "= 0.2.3" 
 - Updated bundler development depedency to '~> 2.1'
-
+- Updated rubocop development dependency to '~> 0.77.0'
+- Updated rake development dependancy to '~> 13.0'
 ### Added
 - Updated asset build targets to support centos6
 
