@@ -10,7 +10,7 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 - Updated rubocop development dependency to '~> 0.77.0'
 - Updated rake development dependancy to '~> 13.0'
 - Updated codeclimate-test-reporter development dependancy to '~> 1.0'
-
+- Updated README to conform with standardization guidelines (sensu-plugins/community#134)
 ### Added
 - Updated asset build targets to support centos6
 
