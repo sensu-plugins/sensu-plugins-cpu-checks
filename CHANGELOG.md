@@ -5,6 +5,10 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+### Changed
+- Updated bundler development depedency to '~> 2.1'
+- Remediated issues reported by updated rubocop
+
 ## [4.1.0] - 2019-12-17
 ### Changed
 - Updated linux-kstat runtime dependancy to "= 0.2.3" 
